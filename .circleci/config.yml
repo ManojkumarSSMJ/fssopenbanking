@@ -1,5 +1,5 @@
 parameters:
-app-dir: ~/project
+app-dir: $CIRCLE_WORKING_DIRECTORY
 jobs:
   test:
     executor: node/default
