@@ -112,9 +112,6 @@ jobs:
 
 
 workflows:
-  # This `lint-pack_validate_publish-dev` workflow will run on any commit.
-  lint_pack-validate_publish-dev:
-    unless: << pipeline.parameters.run-integration-tests >>
     jobs:
       - orb-tools/lint
       # pack your orb YAML files to a single orb.yml
