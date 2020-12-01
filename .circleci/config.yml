@@ -1,3 +1,8 @@
+parameters:
+            app-dir:
+                default: .
+                description: Path to the directory containing your package.json file. Not needed if package.json lives in the root.
+                type: string
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
