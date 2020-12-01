@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@2.0.0
+  node: circleci/node@<<pipeline.parameters.dev-orb-version>>
   orb-tools: circleci/orb-tools@9.1
 
 # Pipeline parameters
@@ -17,6 +17,8 @@ parameters:
 
 integration-tests: &integration-tests
   [
+    integration-test-install-specified-version,
+    integration-test-install-lts,
     node-test-job,
     integration-test-install-latest,
     integration-test-override-ci,
@@ -112,6 +114,9 @@ jobs:
 
 
 workflows:
+  # This `lint-pack_validate_publish-dev` workflow will run on any commit.
+  lint_pack-validate_publish-dev:
+    unless: << pipeline.parameters.run-integration-tests >>
     jobs:
       - orb-tools/lint
       # pack your orb YAML files to a single orb.yml
@@ -143,6 +148,29 @@ workflows:
           context: orb-publishing
           requires:
             - orb-tools/publish-dev
+
+  # This `integration-tests_prod-release` workflow will only run
+  # when the run-integration-tests pipeline parameter is set to true.
+  # It is meant to be triggered by the "trigger-integration-tests-workflow"
+  # job, and run tests on <your orb>@dev:${CIRCLE_SHA1:0:7}.
+  integration-tests_prod-release:
+    when: << pipeline.parameters.run-integration-tests >>
+    jobs:
+      # your integration test jobs go here: essentially, run all your orb's
+      # jobs and commands to ensure they behave as expected. or, run other
+      # integration tests of your choosing
+      - integration-test-install-specified-version:
+          matrix:
+            parameters:
+              os: [linux, macos]
+      - integration-test-install-latest:
+          matrix:
+            parameters:
+              os: [linux, macos]
+      - integration-test-install-lts:
+          matrix:
+            parameters:
+              os: [linux, macos]
       - node/test:
           name: node-test-job
           app-dir: "~/project/sample"
@@ -162,4 +190,3 @@ workflows:
           filters:
             branches:
               only: master
-
