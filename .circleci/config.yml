@@ -1,8 +1,6 @@
-parameters:
-            app-dir:
-                default: .
-                description: C:\Users\Dell\git\fssopenbanking
-                type: string
+environment:
+      TEST_REPORTS: /tmp/test-reports
+    working_directory: ~/fssopenbanking
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
