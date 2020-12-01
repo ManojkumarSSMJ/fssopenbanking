@@ -1,4 +1,3 @@
-environment:
       TEST_REPORTS: /tmp/test-reports
     working_directory: ~/fssopenbanking
 version: 2.1
