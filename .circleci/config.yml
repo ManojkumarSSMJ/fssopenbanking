@@ -1,3 +1,5 @@
+parameters:
+app-dir: ~/project
 jobs:
   test:
     executor: node/default
