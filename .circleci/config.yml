@@ -4,6 +4,7 @@ orbs:
 workflows:
  parameters:
   app-dir: $CIRCLE_WORKING_DIRECTORY
+  type: string
 jobs:
   test:
     executor: node/default
