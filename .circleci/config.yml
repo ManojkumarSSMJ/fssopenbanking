@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@4.0.1
   parameter:
-  app-dir: $/project/sample
+  app-dir: $CIRCLE_WORKING_DIRECTORY
 workflows:
 jobs:
   test:
