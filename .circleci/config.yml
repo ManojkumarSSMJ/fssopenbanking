@@ -5,10 +5,7 @@ orbs:
   app-dir:
   default: "~/project/sample"
 workflows:
-  test:
-    jobs:
-      - test
-      jobs:
+jobs:
   test:
     executor: node/default
     steps:
