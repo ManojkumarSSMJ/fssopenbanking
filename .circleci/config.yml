@@ -146,29 +146,6 @@ workflows:
           context: orb-publishing
           requires:
             - orb-tools/publish-dev
-
-  # This `integration-tests_prod-release` workflow will only run
-  # when the run-integration-tests pipeline parameter is set to true.
-  # It is meant to be triggered by the "trigger-integration-tests-workflow"
-  # job, and run tests on <your orb>@dev:${CIRCLE_SHA1:0:7}.
-  integration-tests_prod-release:
-    when: << pipeline.parameters.run-integration-tests >>
-    jobs:
-      # your integration test jobs go here: essentially, run all your orb's
-      # jobs and commands to ensure they behave as expected. or, run other
-      # integration tests of your choosing
-      - integration-test-install-specified-version:
-          matrix:
-            parameters:
-              os: [linux, macos]
-      - integration-test-install-latest:
-          matrix:
-            parameters:
-              os: [linux, macos]
-      - integration-test-install-lts:
-          matrix:
-            parameters:
-              os: [linux, macos]
       - node/test:
           name: node-test-job
           app-dir: "~/project/sample"
