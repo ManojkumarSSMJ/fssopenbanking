@@ -1,8 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@4.0.1
-  parameters:
-  app-dir: $CIRCLE_WORKING_DIRECTORY
 workflows:
 jobs:
   test:
@@ -13,3 +11,5 @@ jobs:
           cache-path: ~/project/node_modules
           override-ci-command: npm install
       - run: npm run test
+        parameters:
+  app-dir: $CIRCLE_WORKING_DIRECTORY
