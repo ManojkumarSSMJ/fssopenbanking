@@ -1,21 +1,8 @@
-parameters:
-            app-dir:
-                default: .
-                description: Path to the directory containing your package.json file. Not needed if package.json lives in the root.
-                type: string
-jobs:
-  test:
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: npm install
-      - run: npm run test
+version: 2.1
 orbs:
   node: circleci/node@3.0.0
-version: 2.1
 workflows:
-  test_my_app:
+  node-tests:
     jobs:
-      - test
+      - node/test
+version: 13.11.0
