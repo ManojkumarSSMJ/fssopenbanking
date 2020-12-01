@@ -1,5 +1,10 @@
 parameters:
-app-dir: $CIRCLE_WORKING_DIRECTORY
+  app-dir:
+    default: ~/project
+    description: >-
+      Path to the directory containing your package.json file. Not needed if
+      package.json lives in the root.
+    type: string
 jobs:
   test:
     executor: node/default
