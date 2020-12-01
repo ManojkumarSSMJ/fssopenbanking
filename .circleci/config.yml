@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@<<pipeline.parameters.dev-orb-version>>
+  node: circleci/node@3.0.0
   orb-tools: circleci/orb-tools@9.1
 
 # Pipeline parameters
