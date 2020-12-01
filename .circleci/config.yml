@@ -1,7 +1,7 @@
 parameters:
             app-dir:
                 default: .
-                description: "C:\Users\Dell\git\fssopenbanking"
+                description: C:\Users\Dell\git\fssopenbanking
                 type: string
 version: 2.1
 orbs:
