@@ -1,0 +1,53 @@
+.clearbreak {
+	clear:both;
+	padding:1%;
+}
+
+.countrycode {
+	width: 35px;
+}
+
+.red {
+	color:red;
+}
+
+.date-from-pciker{
+	size:20;
+	width: 175px;
+}
+#loading {
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   position: fixed;
+   display: block;
+   opacity: 0.7;
+   background-color: #fff;
+   z-index: 99;
+   text-align: center;
+   
+}
+
+#loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  z-index: 100;
+}
+#loading-text {
+  position: relative;
+    top: 66%;
+    left: 3%;
+    font-size: 18px;
+    color: black;	
+}
+.loginImg{
+	text-align:center;
+}
+.loginImg > img {
+	
+	max-width:150px;
+}
+  

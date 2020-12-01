@@ -1,0 +1,12 @@
+.clearfix:before,.clearfix:after{
+	content:"";display:inline;
+	}
+.clearfix:after{clear:both}
+.clearfix{*zoom:1}
+.prettycheckbox,.prettyradio{display:inline-block;padding:0;margin:0;float:left;}
+.prettycheckbox label, .prettyradio label{min-width: inherit; }
+.has-pretty-child label{float:left;min-width: inherit !important;line-height: 30px; font-weight:normal;}
+.prettycheckbox>a:focus,.prettyradio>a:focus{outline:0 none}
+.prettycheckbox label,.prettyradio label{display:inline-block;float:left;cursor:pointer;}
+.prettycheckbox a.disabled,.prettycheckbox label.disabled,.prettyradio a.disabled,.prettyradio label.disabled{cursor:not-allowed}
+

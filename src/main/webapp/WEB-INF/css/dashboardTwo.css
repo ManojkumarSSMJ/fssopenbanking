@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+ul.widgets-three-cols li > .box{
+	height:370px;
+	}
+ul.widgets-three-cols li.col-lg-8 {
+    width: 66.66666666%;
+    padding: 10px 1% 10px 0;
+}
+ul.widgets-three-cols li.col-lg-4 {
+    width: 33.33333333%;
+    padding: 10px 1% 10px 0;
+}
+ul.widgets-three-cols li.col-lg-4 li.col-lg-12 {
+    width: 100%;
+}
+ul.widgets-three-cols li .box{
+	text-align:center;
+	padding:1%;
+}
+ul.widgets-three-cols li .box{
+	display: inline-block;
+    width: 100%;
+}
+.padding{
+	padding:1%;
+}
+ul.widgets-three-cols li .box .big-font {
+    line-height: 90%;
+}
+ul.widgets-three-cols li .box img {
+    margin-bottom:10px;
+}
+ul.widgets-three-cols li ul {
+    padding:0;
+}
+ul.widgets-three-cols li ul li{
+    padding:0;
+}

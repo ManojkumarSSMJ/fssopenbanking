@@ -1,0 +1,251 @@
+@charset "utf-8";
+/* CSS Document */
+@media (max-width: 1261px) {
+  .container {
+    width: 100%;
+	padding:0 2% 0 2%;
+	margin:0;
+  }
+  section.login-container{
+	padding: 30px 10%;
+  }
+	.gray-spl-btn, .base-spl-btn {
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+	.spl-message, .spl-message-footer {
+		padding: 2% 3% 3%;
+	}
+	.spl-message h5, .spl-message-footer h5 {
+		margin: 0 0 10px !important;
+	}
+ footer .row-one ul li.ss-img {
+	width: 31%;	
+ }
+ footer .row-one ul li.ss-img li {
+	float: none;
+	}
+}
+@media (max-width: 1260px) {
+ 	section.login-container{
+	 	 padding: 30px 0%;
+	 }
+}
+@media (max-width: 1024px) {
+ 	.virtualkeyboard {
+	    width: 49%;
+	}
+	.login-container .login {
+  		width: 46%;
+	}
+}
+@media (max-width: 1016px) {
+ .dashboard .col-xs-11{
+ 	width: 90.66666667%;
+ }
+}
+@media (max-width: 967px) {
+  header .row-one .navbar-header{
+	display: none;
+  }
+  header .row-one .collapse  {
+	display: block;
+	visibility: visible;
+  }
+  .spl-message-footer ul li:first-child {
+	width: 75%;
+	}
+  .spl-message-footer ul li {
+	width: 25%;
+	}
+}
+@media (max-width: 940px) {
+  
+}
+@media (max-width: 930px) {
+  .logo {
+	width: 38%;
+	}
+  .logo img{
+	  max-width:100%;
+	  }
+	header .row-two .nav li {
+		min-width: 14%;
+	  }
+	footer .row-one ul > li{
+		width:45%;
+	}
+	footer .row-one li,footer .row-one li.other-links{
+	width: 45%;
+	}  
+	footer .row-one ul li.ss-img{
+	width: 45%;
+	clear: both;
+	}  
+	footer .row-one ul li.ss-img li {
+	width: auto;
+	}
+}
+@media (max-width: 910px) {
+ .dashboard .col-xs-11{
+ 	width: 89%;
+ }
+ ul.widgets li {
+	  width: 45%;
+	}
+}
+@media (max-width: 830px) {
+	header .row-two .nav > li > a {
+		padding: 35px 17px 38px;
+	}
+	.logo img{
+	  max-width:none;
+	  }
+}
+@media (max-width: 820px) {
+	.logo {
+		width: 100%;
+		text-align: center;
+	}
+	header .row-two .nav {
+		float: none;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+	header .row-two .nav li {
+		width: 25%;
+	}
+	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {	
+		border-color: transparent;
+	}
+	header .row-two .nav li {
+		max-height: 118px;
+		overflow:hidden;
+	}
+}
+@media (max-width: 774px) {
+ .dashboard .col-xs-11{
+ 	width: 85%;
+ }
+}
+@media (max-width: 768px) {
+	header .row-two .navbar-header{
+		display: none;
+	  }
+	  /*header .row-two .collapse  {
+		display: block;
+		visibility: visible;
+	  }*/
+	section.login-container{
+		 padding: 30px 0%;
+	 }
+	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus{
+		 color: #9d9d9d;
+	}
+	.virtualkeyboard, .login .prettycheckbox {
+	    display:none;
+	}
+	.login-container .login {
+  		width: 50%;
+  		margin: 0 auto;
+		float: none;
+  		display: block;
+	}
+}
+@media (max-width: 650px) {
+.spl-message-footer ul li:first-child {
+	width: 100%;
+	}
+  .spl-message-footer ul li {
+	width: 100%;
+	}
+	.spl-message-btn a{
+		float:left;
+		}
+	.login-container .login {
+  		width: 80%;
+	}
+	ul.widgets li {
+	  width: 100%;
+	}
+}
+@media (max-width: 572px) {
+ .dashboard .col-xs-11{
+ 	width: 80%;
+ }
+}
+@media (max-width: 550px) {
+	.col-xs-6{
+		width:100%;
+		}
+	.box-content > div:first-child {
+		border-right: 0px dotted #b2b2b2;
+		border-bottom: 1px dotted #b2b2b2;
+	}
+	footer .row-two .col-xs-11{
+		font-size:80%;
+		}
+}
+
+@media (max-width: 480px) {
+footer .row-one ul > li, footer .row-one ul li.ss-img,footer .row-one ul {
+	width: 100%;
+	}
+}
+@media (max-width: 440px) {
+	header .row-one .col-xs-3{
+		width: 40%;
+		}
+		.logo {
+		width: 80%;
+		}
+		.logo img {
+		max-width: 100%;
+		}
+	header .row-two .navbar-header{
+		display: block;
+	  }
+	footer .row-two .col-xs-11{
+		font-size:100%;
+		width:100%;
+		line-height: 22px;
+	}  
+	footer .row-two .col-xs-1 {
+	width: 100%;
+	float:none;
+	}
+	footer .row-two img {
+	float: none;
+	padding-top:10px; 
+	}
+	.dashboard .content-container aside {
+  		width: 100%;
+	}
+	.dashboard .content-container aside ul.icons li{
+		float: left;
+  		display: inline-block;
+  		  margin: 0 10px;
+	}
+	.dashboard .col-xs-11 {
+  		width: 100%;
+
+	}
+}
+@media (min-width: 440px) {
+	 header .row-two .collapse {
+		display:inherit;
+		visibility: inherit;
+		}
+}
+@media (max-width: 420px) {
+	.login-footer-link a {
+  		margin-top: 15px;
+	}
+}	
+@media (max-width: 370px) {
+	.gray-spl-btn, .base-spl-btn{
+		display:block;
+		margin-bottom:5px;
+		}	
+}

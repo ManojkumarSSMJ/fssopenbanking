@@ -1,0 +1,72 @@
+.container {
+    width: 97%;
+ }
+.col-lg-12{
+	width:92%;
+	padding:2%;
+	margin:0 2%;
+	}
+.col-xs-6{
+	width:44%;
+	}
+header .row-two nav ul li{
+	width:120px;
+	}
+.topmenu div {
+	margin: 0;
+	padding: 0;
+	float: right;
+	display: inline-block;
+}	
+nav.topmenu span{	
+			display: inline-block;
+			float:left;
+			}
+nav.topmenu .search{
+		display: inline-block;
+			float:left;
+	}			
+.breadcrumb > LI{
+	float:left;
+	margin-left:10px;
+}
+
+.gray-border-bottom .breadcrumb{
+	clear:both;
+	}
+.flex-control-nav{
+	bottom:90px;
+	}	
+.cusel .cusel-scroll-pane{
+	z-index:1;
+	}	
+select{
+	z-index:0;
+	}	
+.form P	{
+	margin-bottom:15px;
+	}
+.checkbox, .radio{
+	display:inline-block;
+	}	
+#calBorder {
+	height:230px !important;	
+}
+.nav-tabs{
+	width:100%;
+	margin:0;
+	}
+.db-search-field{
+	float:left;
+	}	
+.db-search{width:230px !important;}	
+footer .row-two img{
+	}
+.form-col-4 LABEL, .form-col-2 LABEL{min-width:0%;}	
+.dropdown-menu{
+	z-index:999999999;
+	}
+.db-search-field{width:171px;}	
+.form-inline .form-control{
+	float:left;
+	}

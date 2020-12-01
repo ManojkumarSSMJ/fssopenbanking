@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+		<!-- Base Tiles Definition -->
+	<definition name="page.preloginlayout" template="/WEB-INF/view/common/preloginlayout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/view/common/preloginheader.jsp" />
+		<put-attribute name="body" value="/WEB-INF/view/common/preloginbody.jsp" />
+		<put-attribute name="title" value="FSS Open Banking" />
+		<put-attribute name="footer"
+			value="/WEB-INF/view/common/preloginfooter.jsp" />
+	</definition>
+	
+	<definition name="page.mpaylayout" template="/WEB-INF/view/common/mpaylayout.jsp">
+		<put-attribute name="title" value="FSS Open Banking" />
+		<put-attribute name="menu" value="/WEB-INF/view/common/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/view/common/body.jsp" /> 
+	</definition>
+	
+	<definition name="page.adminlayout" template="/WEB-INF/view/common/mpaylayout.jsp">
+		<put-attribute name="title" value="FSS Open Banking" />
+		<put-attribute name="menu" value="/WEB-INF/view/common/adminMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/view/common/body.jsp" /> 
+	</definition>
+	
+	<definition name="page.banklayout" template="/WEB-INF/view/common/banklayout.jsp">
+		<put-attribute name="title" value="FSS Open Banking" />
+		<put-attribute name="menu" value="/WEB-INF/view/common/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/view/common/body.jsp" /> 
+	</definition>
+	
+	<definition name="page.index" extends="page.preloginlayout">
+		<put-attribute name="body" value="/WEB-INF/view/common/preloginbody.jsp" />
+	</definition>
+	
+	<definition name="page.login" extends="page.preloginlayout">
+		<put-attribute name="body" value="/WEB-INF/view/login/tppLogin.jsp" />
+	</definition>
+	
+	<definition name="page.signUp" extends="page.preloginlayout">
+		<put-attribute name="body" value="/WEB-INF/view/signup/tppSignUp.jsp" />
+	</definition>
+	
+	<definition name="page.tppHome" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/home/home.jsp" /> 
+	</definition>
+	
+	<definition name="page.tpp.accounts" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/accounts/account.jsp" /> 
+	</definition>
+	
+	<definition name="page.tpp.balance" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/balance/balance.jsp" /> 
+	</definition>
+
+	<definition name="page.tpp.transaction" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/accounts/transactions.jsp" /> 
+	</definition>
+	
+	<definition name="page.tpp.payments" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/payments/payment.jsp" /> 
+	</definition>
+	
+	<definition name="page.tpp.payments.showbanks" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/payments/bankDetails.jsp" /> 
+	</definition>
+	
+	<definition name="page.showbank" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/show/bankDetails.jsp" />
+	</definition>
+	
+	<definition name="page.tpp.beneficiaries" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/beneficiaries/beneficiary.jsp" /> 
+	</definition>
+	
+	<definition name="page.tpp.directdebits" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/directdebits/directdebit.jsp" /> 
+	</definition>
+	
+	<definition name="page.tpp.standingorders" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/standingorders/standingorder.jsp" /> 
+	</definition>
+	
+	<definition name="page.tpp.atm" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/atmlocations/atmlocation.jsp" /> 
+	</definition>
+	
+	<definition name="page.tpp.branch" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/tpp/branchlocations/branchlocation.jsp" /> 
+	</definition>
+	
+	<definition name="page.show.consent" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/show/consentDetails.jsp" />
+	</definition>
+	
+	<definition name="page.show.activity" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/show/activity.jsp" />
+	</definition>
+	
+	<definition name="page.paymentredirect" extends="page.mpaylayout">
+		<put-attribute name="body" value="/WEB-INF/view/redirect/paymentredirect.jsp" /> 
+	</definition>
+	
+	<definition name="page.mpayredirect" extends="page.banklayout">
+		<put-attribute name="body" value="/WEB-INF/view/redirect/mpayredirect.jsp" />
+	</definition>
+
+	<definition name="page.bankPaymentConsent" extends="page.banklayout">
+		<put-attribute name="body" value="/WEB-INF/view/consent/bankPaymentConsent.jsp" />
+	</definition>
+	
+	<definition name="page.tppAdminHome" extends="page.adminlayout">
+		<put-attribute name="body" value="/WEB-INF/view/home/home.jsp" /> 
+	</definition>
+	
+	<definition name="page.showConsent" extends="page.adminlayout">
+		<put-attribute name="body" value="/WEB-INF/view/show/showConsent.jsp" /> 
+	</definition>
+	
+	<definition name="page.dashboard" extends="page.adminlayout">
+		<put-attribute name="body" value="/WEB-INF/view/dashboard/dashboard.jsp" /> 
+	</definition>
+	
+</tiles-definitions>
