@@ -11,9 +11,6 @@ parameters:
   run-integration-tests:
     type: boolean
     default: false
-  dev-orb-version:
-    type: string
-    default: "dev:alpha"
 
 integration-tests: &integration-tests
   [
