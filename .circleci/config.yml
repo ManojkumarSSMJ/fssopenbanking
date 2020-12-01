@@ -14,10 +14,7 @@ parameters:
 
 integration-tests: &integration-tests
   [
-    integration-test-install-specified-version,
-    integration-test-install-lts,
     node-test-job,
-    integration-test-install-latest,
     integration-test-override-ci,
     integration-test-yarn
   ]
@@ -29,65 +26,6 @@ executors:
   macos:
     macos:
       xcode: 11.4
-
-jobs:
-# Install NodeJS into a non-node container.
-  integration-test-install-specified-version:
-    parameters:
-      os:
-        type: executor
-    executor: <<parameters.os>>
-    steps:
-      - checkout
-      - node/install:
-          node-version: "13.11.0"
-          install-yarn: true # Test the install of YARN
-          yarn-version: "1.22.5"
-      - run:
-          command: |
-            if ! node --version | grep -q "13"; then
-              echo "Node version 13 not found"
-              exit 1
-            fi
-
-  integration-test-install-latest:
-    parameters:
-      os:
-        type: executor
-    executor: <<parameters.os>>
-    steps:
-      - checkout
-      - node/install
-      - run:
-          name: Check that latest NodeJS is installed.
-          command: |
-            NODE_ORB_INSTALL_VERSION=$(nvm ls-remote | tail -n1 | awk '{print $2}')
-            echo "Latest Node version = $NODE_ORB_INSTALL_VERSION"
-            echo "Installed version: $(node --version)"
-            if ! node --version | grep -q "$NODE_ORB_INSTALL_VERSION"; then
-              echo "Error: Installed version is different from the latest version."
-              exit 1
-            fi
-
-  integration-test-install-lts:
-    parameters:
-      os:
-        type: executor
-    executor: <<parameters.os>>
-    steps:
-      - checkout
-      - node/install:
-          lts: true
-      - run:
-          name: Check that the latest LTS version of NodeJS is installed.
-          command: |
-            NODE_ORB_INSTALL_VERSION=$(nvm ls-remote | grep 'Latest LTS' | tail -n1 | awk '{print $2}')
-            echo "Latest Node LTS version = $NODE_ORB_INSTALL_VERSION"
-            echo "Installed version: $(node --version)"
-            if ! node --version | grep -q "$NODE_ORB_INSTALL_VERSION"; then
-              echo "Error: Installed version is different from the latest LTS version."
-              exit 1
-            fi
 
   integration-test-override-ci:
     executor: node/default
@@ -153,37 +91,9 @@ workflows:
   integration-tests_prod-release:
     when: << pipeline.parameters.run-integration-tests >>
     jobs:
-      # your integration test jobs go here: essentially, run all your orb's
-      # jobs and commands to ensure they behave as expected. or, run other
-      # integration tests of your choosing
-      - integration-test-install-specified-version:
-          matrix:
-            parameters:
-              os: [linux, macos]
-      - integration-test-install-latest:
-          matrix:
-            parameters:
-              os: [linux, macos]
-      - integration-test-install-lts:
-          matrix:
-            parameters:
-              os: [linux, macos]
       - node/test:
           name: node-test-job
           app-dir: "~/project/sample"
           cache-version: v3
       - integration-test-override-ci
       - integration-test-yarn
-      - orb-tools/dev-promote-prod-from-commit-subject:
-          orb-name: circleci/node
-          context: orb-publishing
-          add-pr-comment: true
-          bot-token-variable: GHI_TOKEN
-          bot-user: cpe-bot
-          fail-if-semver-not-indicated: true
-          publish-version-tag: true
-          ssh-fingerprints: 2a:2b:49:ea:64:7d:39:4a:58:17:18:17:b2:5c:f6:a8
-          requires: *integration-tests
-          filters:
-            branches:
-              only: master
