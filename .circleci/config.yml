@@ -2,8 +2,7 @@ version: 2.1
 
 orbs:
   # Replace this with your own!
-  node: circleci/node@3.0.0
-  orb-tools: circleci/orb-tools@10.0
+  orb-tools: circleci/orb-tools@10.0.3
 
 # Pipeline Parameters
 ## These parameters are used internally by orb-tools. Skip to the Jobs section.
