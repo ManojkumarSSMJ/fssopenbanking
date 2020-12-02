@@ -1,7 +1,6 @@
 version: '2.1'
 orbs:
   orb-tools: circleci/orb-tools@10
-  your-orb: your-namespace/your-orb@<<pipeline.parameters.dev-orb-version>>
 jobs:
   integration-tests-for-your-orb:
     executor: orb-tools/ubuntu
